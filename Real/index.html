@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+        @theme {
+            --color-taj: #f8f4f0;
+            --color-primary: #34a0a4;
+            --color-num: #34a0a4;
+            --color-gr: #808080;
+            --color-para: #000000A6;
+        }
+    </style>
+</head>
+
+<body class="bg-taj text-black font-normal"
+      style="font-family: 'League Spartan', sans-serif;">
+
+    <!-- BLOCK 1: HERO AND NAVIGATION -->
+    <header class="p-3 sm:p-5 lg:p-8">
+        <div class="rounded-2xl sm:rounded-3xl overflow-hidden bg-cover bg-center
+                    bg-[url('https://homedeninterior.com/media/services/ChatGPT_Image_Jun_20_2026_11_03_54_AM.webp')]">
+
+            <div class="bg-black/50 text-white p-5 sm:p-8 lg:p-12 min-h-[480px]
+                        sm:min-h-[550px] flex flex-col justify-between gap-10">
+
+                <!-- Navigation -->
+                <nav class="flex flex-col lg:flex-row items-center justify-between gap-6">
+
+                    <a href="./index.html" class="flex items-center gap-2 shrink-0">
+                        <img
+                            src="https://bcassetcdn.com/public/blog-ms/production/sites/2/2023/01/gold-real-estate-building-by-aleksandro-brandcrowd.png"
+                            alt="Real Estate logo"
+                            class="w-10 h-10 sm:w-12 sm:h-12 object-contain">
+
+                        <span class="text-2xl sm:text-3xl font-semibold">
+                            RealEstate
+                        </span>
+                    </a>
+
+                    <div class="flex flex-wrap justify-center gap-x-4 gap-y-3
+                                sm:gap-x-6 text-base sm:text-lg lg:text-xl">
+                        <a href="./index.html" class="hover:text-primary">Home</a>
+                        <a href="./about/index.html" class="hover:text-primary">About</a>
+                        <a href="./services/index.html" class="hover:text-primary">Services</a>
+                        <a href="./properties/index.html" class="hover:text-primary">Properties</a>
+                        <a href="./Contacts/index.html" class="hover:text-primary">Contacts</a>
+                    </div>
+
+                    <div class="flex items-center justify-center gap-4">
+                        <a href="#" aria-label="Facebook">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBCMOywB6WsbMGhCDmYx11NYVnkZB5tf8Sy4bYDoRsQA&s=10"
+                                 alt="" class="w-5 h-5 object-contain">
+                        </a>
+                        <a href="#" aria-label="Pinterest">
+                            <img src="https://static.vecteezy.com/system/resources/previews/023/986/676/non_2x/pinterest-logo-pinterest-logo-transparent-pinterest-icon-transparent-free-free-png.png"
+                                 alt="" class="w-6 h-6 object-contain">
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <img src="https://static.vecteezy.com/system/resources/thumbnails/018/930/572/small/youtube-logo-youtube-icon-transparent-free-png.png"
+                                 alt="" class="w-7 h-7 object-contain">
+                        </a>
+                        <a href="/properties/" aria-label="Search properties">
+                            <img src="https://www.citypng.com/public/uploads/preview/download-blue-search-icon-button-png-7017516949747893a50ute33v.png"
+                                 alt="" class="w-6 h-6 object-contain">
+                        </a>
+                    </div>
+                </nav>
+
+                <!-- Hero Content -->
+                <div class="text-center max-w-4xl mx-auto py-6 sm:py-10">
+                    <p class="text-lg sm:text-xl md:text-2xl mb-5">
+                        Discover Your Dream Home With Us
+                    </p>
+
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl
+                               xl:text-8xl font-semibold leading-tight">
+                        Find The Perfect Property
+                        <br class="hidden sm:block">
+                        <span class="sm:whitespace-nowrap">For Your Life Style</span>
+                    </h1>
+
+                    <a href="/properties/"
+                       class="inline-block mt-8 bg-num border-2 border-primary
+                              hover:border-white hover:bg-primary text-white
+                              font-medium rounded-xl px-7 py-4 text-base sm:text-lg
+                              transition-colors">
+                        START SEARCHING
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- BLOCK 2: WHAT WE DO -->
+    <section class="mx-3 sm:mx-5 lg:mx-8 my-8 sm:my-12 bg-white
+                    rounded-2xl p-5 sm:p-8 lg:p-12">
+
+        <div class="text-center max-w-3xl mx-auto">
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl mb-5">
+                What We Do
+            </h2>
+
+            <p class="text-para text-lg sm:text-xl leading-relaxed">
+                Simplifying the journey of buying, selling, and renting properties.
+                Our expert team provides comprehensive real estate solutions
+                tailored to your needs.
+            </p>
+
+            <hr class="border-primary border-t-2 w-24 mx-auto mt-8 mb-10">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <article>
+                <h3 class="text-num text-2xl font-semibold mb-2">01</h3>
+                <h4 class="text-xl sm:text-2xl font-medium mb-3">Property Sales</h4>
+                <p class="text-para text-lg leading-relaxed">
+                    Find your dream home with Real Estate. Our expert team will
+                    guide you through the process and ensure a smooth transaction.
+                </p>
+            </article>
+
+            <article>
+                <h3 class="text-num text-2xl font-semibold mb-2">02</h3>
+                <h4 class="text-xl sm:text-2xl font-medium mb-3">Property Rentals</h4>
+                <p class="text-para text-lg leading-relaxed">
+                    Discover properties that suit your lifestyle, preferences,
+                    and budget with our dedicated team.
+                </p>
+            </article>
+
+            <article>
+                <h3 class="text-num text-2xl font-semibold mb-2">03</h3>
+                <h4 class="text-xl sm:text-2xl font-medium mb-3">Property Buying</h4>
+                <p class="text-para text-lg leading-relaxed">
+                    Explore suitable properties and receive guidance throughout
+                    your home-buying journey.
+                </p>
+            </article>
+
+            <article>
+                <h3 class="text-num text-2xl font-semibold mb-2">04</h3>
+                <h4 class="text-xl sm:text-2xl font-medium mb-3">Property Advice</h4>
+                <p class="text-para text-lg leading-relaxed">
+                    Get helpful guidance to make informed real estate decisions
+                    and find the right property.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- BLOCK 3: FEATURED PROPERTIES -->
+    <section class="px-3 sm:px-5 lg:px-8 py-8 sm:py-12">
+
+        <div class="text-center max-w-3xl mx-auto">
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl mb-5">
+                Featured Properties
+            </h2>
+
+            <p class="text-para text-lg sm:text-xl leading-relaxed">
+                Discover our hand-picked selection of top-notch properties with
+                outstanding features, guaranteed to meet your real estate needs
+                and exceed your expectations.
+            </p>
+
+            <hr class="border-primary border-t-2 w-24 mx-auto mt-8 mb-10">
+        </div>
+
+        <!-- Responsive property cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <article class="min-w-0">
+                <img
+                    src="https://websitedemos.net/real-estate-company-04/wp-content/uploads/sites/1484/2023/07/feature-01.jpg"
+                    alt="Modern apartment"
+                    class="w-full aspect-[4/3] object-cover rounded-2xl">
+
+                <p class="text-lg mt-5">Apartment - Queens</p>
+                <h3 class="text-2xl sm:text-3xl mt-3 font-medium">
+                    Modern Stylish Apartment
+                </h3>
+                <p class="text-para text-lg mt-3 leading-relaxed">
+                    Discover the epitome of contemporary living in our sleek
+                    and chic modern stylish apartments.
+                </p>
+                <p class="text-num text-2xl font-semibold mt-5">$150,000</p>
+            </article>
+
+            <article class="min-w-0">
+                <img
+                    src="https://websitedemos.net/real-estate-company-04/wp-content/uploads/sites/1484/2023/07/feature-01.jpg"
+                    alt="Stylish apartment interior"
+                    class="w-full aspect-[4/3] object-cover rounded-2xl">
+
+                <p class="text-lg mt-5">Apartment - Queens</p>
+                <h3 class="text-2xl sm:text-3xl mt-3 font-medium">
+                    Modern Stylish Apartment
+                </h3>
+                <p class="text-para text-lg mt-3 leading-relaxed">
+                    Discover the epitome of contemporary living in our sleek
+                    and chic modern stylish apartments.
+                </p>
+                <p class="text-num text-2xl font-semibold mt-5">$150,000</p>
+            </article>
+
+            <article class="min-w-0 sm:col-span-2 lg:col-span-1">
+                <img
+                    src="https://websitedemos.net/real-estate-company-04/wp-content/uploads/sites/1484/2023/07/feature-01.jpg"
+                    alt="Contemporary apartment"
+                    class="w-full aspect-[4/3] object-cover rounded-2xl">
+
+                <p class="text-lg mt-5">Apartment - Queens</p>
+                <h3 class="text-2xl sm:text-3xl mt-3 font-medium">
+                    Modern Stylish Apartment
+                </h3>
+                <p class="text-para text-lg mt-3 leading-relaxed">
+                    Discover the epitome of contemporary living in our sleek
+                    and chic modern stylish apartments.
+                </p>
+                <p class="text-num text-2xl font-semibold mt-5">$150,000</p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- BLOCK 4: TESTIMONIALS -->
+    <section class="mt-8 sm:mt-12 bg-white p-5 sm:p-8 lg:p-12
+                    grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+
+        <div class="min-w-0">
+            <img
+                src="https://www.shutterstock.com/image-vector/quote-sign-icon-quotation-mark-260nw-235861753.jpg"
+                alt="Quotation mark"
+                class="w-12 sm:w-16 rounded-xl mb-6">
+
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl leading-tight pb-6">
+                Read from clients who have found the perfect place where they
+                can create...
+            </h2>
+
+            <hr class="border-primary border-t-2 w-24 mb-6">
+
+            <p class="text-lg sm:text-xl text-para leading-relaxed">
+                Discover testimonials from satisfied clients who have found
+                their dream properties with Real Estate, the trusted experts
+                in helping you find the perfect place to call home.
+            </p>
+
+            <a href="#testimonials"
+               class="inline-block mt-6 bg-num text-white rounded-lg
+                      px-6 py-4 text-base sm:text-lg hover:bg-primary">
+                MORE TESTIMONIALS
+            </a>
+        </div>
+
+        <div id="testimonials" class="flex flex-col gap-6 min-w-0">
+
+            <article class="border border-gray-200 rounded-2xl p-5 sm:p-7">
+                <div class="flex gap-1 text-yellow-500 text-xl"
+                     aria-label="5 out of 5 stars">
+                    ★★★★★
+                </div>
+
+                <p class="mt-5 text-lg leading-relaxed text-para">
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Ullam esse perferendis dolore dolorem, aliquam
+                    exercitationem facilis quia deserunt voluptate possimus
+                    nesciunt fuga quos voluptas cupiditate libero ipsam vitae
+                    explicabo obcaecati!"
+                </p>
+
+                <p class="text-num font-semibold mt-5">TONEY STARK</p>
+            </article>
+
+            <article class="border border-gray-200 rounded-2xl p-5 sm:p-7">
+                <div class="flex gap-1 text-yellow-500 text-xl"
+                     aria-label="5 out of 5 stars">
+                    ★★★★★
+                </div>
+
+                <p class="mt-5 text-lg leading-relaxed text-para">
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Ullam esse perferendis dolore dolorem, aliquam
+                    exercitationem facilis quia deserunt voluptate possimus
+                    nesciunt fuga quos voluptas cupiditate libero ipsam vitae
+                    explicabo obcaecati!"
+                </p>
+
+                <p class="text-num font-semibold mt-5">TONEY STARK</p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- BLOCK 5: ABOUT / CONNECTING PEOPLE -->
+    <section class="mt-8 sm:mt-12 bg-white p-5 sm:p-8 lg:p-12
+                    grid grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12">
+
+        <div>
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM9EZdRkxdz8GuOD0clRzw8nZP3IDZg4vt9cRZDxbbdg&s"
+                alt="Real estate home interior"
+                class="w-full h-64 sm:h-96 lg:h-[500px] object-cover rounded-2xl">
+        </div>
+
+        <div class="min-w-0">
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl leading-tight">
+                Connecting people with perfect homes is our passion.
+            </h2>
+
+            <hr class="border-primary border-t-2 w-24 mt-7 mb-7">
+
+            <p class="text-para text-lg sm:text-xl leading-relaxed">
+                With a genuine passion for helping people find their dream
+                homes, we are dedicated to connecting buyers and sellers in
+                the real estate market. Trust us to make your home buying or
+                selling experience seamless and satisfying.
+            </p>
+
+            <a href="/about/"
+               class="inline-block bg-num hover:bg-primary text-white
+                      rounded-xl px-7 py-4 mt-7">
+                READ MORE
+            </a>
+        </div>
+    </section>
+
+    <!-- BLOCK 6: APPOINTMENT -->
+    <section class="m-3 sm:m-5 lg:m-8 mt-8 sm:mt-12">
+        <div class="rounded-2xl sm:rounded-3xl overflow-hidden bg-cover bg-center
+                    bg-[url('https://img.staticmb.com/mbimages/interiorDesignerCMS/decorPartner/111/projectImage/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table-1024x683.jpg.webp')]">
+
+            <div class="bg-black/30 p-5 sm:p-10 lg:p-16 min-h-80
+                        flex items-center justify-center">
+
+                <div class="bg-white rounded-2xl w-full max-w-2xl
+                            p-6 sm:p-10 lg:p-14 text-center">
+
+                    <p class="text-num text-lg sm:text-xl font-semibold">
+                        CONTACT US
+                    </p>
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl mt-4 leading-tight">
+                        Schedule An Appointment
+                    </h2>
+
+                    <hr class="border-primary border-t-2 w-24 mx-auto mt-6 mb-8">
+
+                    <a href="/Contacts/"
+                       class="inline-block bg-num text-white hover:bg-primary
+                              rounded-xl px-7 py-4">
+                        CONTACT US
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOCK 7: FOOTER CONTENT -->
+    <footer class="px-5 sm:px-8 lg:px-12 pt-10 sm:pt-16">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+                    gap-10 pb-10">
+
+            <!-- Logo -->
+            <div>
+                <img
+                    src="https://websitedemos.net/real-estate-company-04/wp-content/uploads/sites/1484/2023/07/footer-logo.svg"
+                    alt="Real Estate logo"
+                    class="w-36 max-w-full">
+            </div>
+
+            <!-- About -->
+            <div>
+                <h3 class="text-2xl sm:text-3xl font-semibold mb-5">
+                    About Us
+                </h3>
+
+                <p class="text-para text-lg leading-relaxed">
+                    At Real Estate, we pride ourselves on being a trusted and
+                    reputable name in the real estate industry with years
+                    of experience.
+                </p>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-2xl sm:text-3xl font-semibold mb-5">
+                    Contact Info
+                </h3>
+
+                <address class="not-italic text-num text-lg leading-8">
+                    13, Fifth Avenue, New York, NY 101660
+                    <br>
+                    <a href="mailto:contact@info.com" class="break-words">
+                        contact@info.com
+                    </a>
+                    <br>
+                    <a href="tel:5553454599">555-345-4599</a>
+                </address>
+            </div>
+
+            <!-- Search -->
+            <div>
+                <h3 class="text-2xl sm:text-3xl font-semibold mb-5">
+                    Property Search
+                </h3>
+
+                <p class="text-para text-lg leading-relaxed mb-5">
+                    Lorem ipsum dolor sit amet, consectetur elit.
+                    Donec faucibus, quam sed.
+                </p>
+
+                <form action="/properties/" method="get"
+                      class="flex w-full min-w-0">
+
+                    <input
+                        type="search"
+                        name="q"
+                        placeholder="Search Properties"
+                        aria-label="Search properties"
+                        class="min-w-0 flex-1 border border-gray-300
+                               rounded-l-lg px-3 py-3 focus:outline-none
+                               focus:border-primary">
+
+                    <button
+                        type="submit"
+                        aria-label="Submit property search"
+                        class="bg-num text-white px-4 rounded-r-lg
+                               hover:bg-primary">
+                        Search
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Bottom Footer -->
+        <hr class="border-primary border-t-2">
+
+        <div class="flex flex-col sm:flex-row justify-between items-center
+                    gap-5 py-7">
+
+            <p class="text-center sm:text-left text-base sm:text-lg">
+                Copyright © 2026 Real Estate Company
+            </p>
+
+            <div class="flex items-center gap-5">
+
+                <a href="#" aria-label="Facebook">
+                    <img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBCMOywB6WsbMGhCDmYx11NYVnkZB5tf8Sy4bYDoRsQA&s=10"
+                        alt="" class="w-5 h-5 object-contain">
+                </a>
+
+                <a href="#" aria-label="Pinterest">
+                    <img
+                        src="https://static.vecteezy.com/system/resources/previews/023/986/676/non_2x/pinterest-logo-pinterest-logo-transparent-pinterest-icon-transparent-free-free-png.png"
+                        alt="" class="w-6 h-6 object-contain">
+                </a>
+
+                <a href="#" aria-label="YouTube">
+                    <img
+                        src="https://static.vecteezy.com/system/resources/thumbnails/018/930/572/small/youtube-logo-youtube-icon-transparent-free-png.png"
+                        alt="" class="w-7 h-7 object-contain">
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    <img
+                        src="https://img.magnific.com/free-vector/instagram-vector-social-media-icon-7-june-2021-bangkok-thailand_53876-136728.jpg?semt=ais_hybrid&w=740&q=80"
+                        alt="" class="w-6 h-6 object-contain">
+                </a>
+
+                <a href="#" aria-label="Facebook page">
+                    <img
+                        src="https://thumb.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/1280px-Facebook_f_logo_%282021%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+                        alt="" class="w-6 h-6 object-contain">
+                </a>
+
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+</html>
