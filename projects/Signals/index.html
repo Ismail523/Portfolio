@@ -1,23 +1,474 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traffic Signals</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Traffic Signal Simulator</title>
+
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Poppins,sans-serif;
+
+    background:#0f172a;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    color:#fff;
+
+}
+
+.container{
+
+    width:900px;
+
+    max-width:95%;
+
+    background:#1e293b;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.3);
+
+}
+h1{
+
+    margin-bottom:15px;
+
+}
+
+.description{
+
+    color:#cbd5e1;
+
+    margin-bottom:40px;
+
+    line-height:1.6;
+
+}
+
+/* ==========================
+        ROAD
+========================== */
+
+.road{
+
+    width:650px;
+
+    height:650px;
+
+    margin:auto;
+
+    position:relative;
+
+    background:#2d3748;
+
+    border-radius:20px;
+
+}
+
+/* Horizontal Road */
+
+.road::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    left:0;
+
+    width:100%;
+
+    height:140px;
+
+    background:#3b3b3b;
+
+    transform:translateY(-50%);
+
+}
+
+/* Vertical Road */
+
+.road::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    width:140px;
+
+    height:100%;
+
+    background:#3b3b3b;
+
+    transform:translateX(-50%);
+
+}
+
+/* ==========================
+      SIGNAL POSITION
+========================== */
+
+.signal{
+
+    position:absolute;
+
+    text-align:center;
+
+    z-index:2;
+
+}
+
+.north{
+
+    top:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+.south{
+
+    bottom:20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+.east{
+
+    right:20px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+}
+
+.west{
+
+    left:20px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+}
+
+/* ==========================
+     TRAFFIC LIGHT
+========================== */
+
+.traffic-light{
+
+    width:70px;
+
+    background:#111827;
+
+    padding:12px;
+
+    border-radius:15px;
+
+    margin-top:10px;
+
+}
+
+.light{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:#555;
+
+    margin:12px auto;
+
+    transition:.4s;
+
+}
+
+/* ==========================
+      ACTIVE LIGHTS
+========================== */
+
+.red.active{
+
+    background:red;
+
+    box-shadow:0 0 20px red;
+
+}
+
+.yellow.active{
+
+    background:yellow;
+
+    box-shadow:0 0 20px yellow;
+
+}
+
+.green.active{
+
+    background:lime;
+
+    box-shadow:0 0 20px lime;
+
+}
+
+/* ==========================
+       RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+    .road{
+
+        width:350px;
+
+        height:350px;
+
+    }
+
+    .road::before{
+
+        height:80px;
+
+    }
+
+    .road::after{
+
+        width:80px;
+
+    }
+
+    .traffic-light{
+
+        width:55px;
+
+    }
+
+    .light{
+
+        width:30px;
+
+        height:30px;
+
+    }
+
+}
+    </style>
+
 </head>
+
 <body>
-    <div class="main">
-        <h1>Traffic signals</h1>
-        <div class="road">
-            <div class="signal">
-                <h3>Lights</h3>
-                <div class="signals">
-                    <div class="red"></div>
-                    <div class="yellow"></div>
-                    <div class="greeb"></div>
-                </div>
+
+<div class="container">
+
+    <h1>Traffic Signals</h1>
+
+    <p class="description">
+
+    Four paths joining road Traffic Management 
+
+    </p>
+
+    <div class="road">
+
+        <!-- North signal -->
+        <div class="signal north">
+
+            <h3>North</h3>
+
+            <div class="traffic-light" id="north">
+
+                <div class="light red"></div>
+
+                <div class="light yellow"></div>
+
+                <div class="light green"></div>
+
             </div>
+
         </div>
+
+        <!-- East signal-->
+        <div class="signal east">
+
+            <h3>East</h3>
+
+            <div class="traffic-light" id="east">
+
+                <div class="light red"></div>
+
+                <div class="light yellow"></div>
+
+                <div class="light green"></div>
+
+            </div>
+
+        </div>
+
+        <!-- South signal -->
+        <div class="signal south">
+
+            <h3>South</h3>
+
+            <div class="traffic-light" id="south">
+
+                <div class="light red"></div>
+
+                <div class="light yellow"></div>
+
+                <div class="light green"></div>
+
+            </div>
+
+        </div>
+
+        <!-- West signal-->
+        <div class="signal west">
+
+            <h3>West</h3>
+
+            <div class="traffic-light" id="west">
+
+                <div class="light red"></div>
+
+                <div class="light yellow"></div>
+
+                <div class="light green"></div>
+
+            </div>
+
+        </div>
+
     </div>
+
+</div>
+
+<script>
+    const north = document.getElementById("north");
+const south = document.getElementById("south");
+const east = document.getElementById("east");
+const west = document.getElementById("west");
+
+// Remove all active lights
+function resetSignals() {
+
+    document.querySelectorAll(".light").forEach(light => {
+
+        light.classList.remove("active");
+
+    });
+
+}
+
+// Activate one light
+function activate(signal, color) {
+
+    signal.querySelector("." + color).classList.add("active");
+
+}
+
+// Signal Cycle
+function startTrafficSignal() {
+
+    // STEP 1
+    // North & South GREEN
+    // East & West RED
+
+    resetSignals();
+
+    activate(north, "green");
+    activate(south, "green");
+
+    activate(east, "red");
+    activate(west, "red");
+
+
+    // STEP 2 (after 4 sec)
+    setTimeout(() => {
+
+        resetSignals();
+
+        activate(north, "yellow");
+        activate(south, "yellow");
+
+        activate(east, "red");
+        activate(west, "red");
+
+    }, 4000);
+
+
+    // STEP 3 (after 6 sec)
+    setTimeout(() => {
+
+        resetSignals();
+
+        activate(north, "red");
+        activate(south, "red");
+
+        activate(east, "green");
+        activate(west, "green");
+
+    }, 6000);
+
+
+    // STEP 4 (after 10 sec)
+    setTimeout(() => {
+
+        resetSignals();
+
+        activate(north, "red");
+        activate(south, "red");
+
+        activate(east, "yellow");
+        activate(west, "yellow");
+
+    }, 10000);
+
+}
+
+// Start Immediately
+startTrafficSignal();
+
+// Repeat Every 12 Seconds
+setInterval(startTrafficSignal,12000);
+</script>
+
 </body>
+
 </html>
