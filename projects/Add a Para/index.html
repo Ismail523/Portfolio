@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(116, 94, 137);
+
+
+        }
+
+        .main {
+            margin-top: 200px;
+        }
+
+        .main #addBtn {
+            margin-left: 95px;
+            background-color: green;
+            color: white;
+        }
+
+        .main #addBtn:hover {
+            font-size: 0.9rem;
+
+        }
+
+        .box {
+            margin-top: 3px;
+            margin-bottom: 3px;
+            align-self: center;
+            width: 300px;
+            height: 120px;
+            border: 3px solid black;
+            background-color: white;
+        }
+
+        .box>div {
+            padding-left: 4px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="main">
+        <h1>Chick the Button Below</h1>
+        <button id="addBtn">Add Paragraph</button>
+        <div class="box">
+            <div id="container"></div>
+        </div>
+    </div>
+    <script>
+        const button = document.getElementById('addBtn');
+        const result = document.getElementById('container');
+
+
+        button.addEventListener("click", () => {
+            result.innerHTML = "";
+            const paragraph = document.createElement("p");
+
+            paragraph.textContent = "Welcome! to My first Project of the Web-development Course, We're going to explore more be ready.I'll be needing your feedback by reviewing my projects provide your valuable feedback";
+
+            result.appendChild(paragraph);
+        });
+    </script>
+</body>
+
+</html>

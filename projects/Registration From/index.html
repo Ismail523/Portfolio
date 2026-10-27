@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form with CAPTCHA</title>
+    <!-- Font Awesome Link for Refresh Icon -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm">
+            <!-- Full Name -->
+            <div class="input-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" required placeholder="Enter Name">
+            </div>
+
+            <!-- Email -->
+            <div class="input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="Enter Email">
+            </div>
+
+            <!-- Password -->
+            <div class="input-group" id="pwdBox">
+                <label for="password">Password</label>
+                <input type="password" id="password" required placeholder="password" maxlength="8" >
+                <span id="togglePwd">👁</span>
+                 
+            </div>
+
+            <!-- CAPTCHA Section -->
+            <div class="captcha-container">
+                <label>Captcha</label>
+                <div class="captcha-wrapper">
+                    <div class="captcha-box" id="captchaBox"></div>
+                    <button type="button" class="refresh-btn" id="refreshBtn" title="Refresh CAPTCHA">
+                         ↻
+                    </button>
+                </div>
+                <input type="text" id="captchaInput" placeholder="Enter CAPTCHA code"  required>
+            </div>
+
+            <!-- Status Message Box -->
+            <div class="status-msg" id="statusMsg"></div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const captchaBox = document.getElementById("captchaBox");
+    const refreshBtn = document.getElementById("refreshBtn");
+    const captchaInput = document.getElementById("captchaInput");
+    const registrationForm = document.getElementById("registrationForm");
+    const statusMsg = document.getElementById("statusMsg");
+    const togglepwd = document.getElementById("togglePwd");
+    const pwd = document.querySelector("#password");
+
+    let generatedCaptcha = "";
+
+    // Generate random 6-character Alphanumeric CAPTCHA string
+    function generateCaptcha() {
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        let result = "";
+        for (let i = 0; i < 6; i++) {
+            result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        generatedCaptcha = result;
+        captchaBox.textContent = generatedCaptcha;
+    }
+
+    // Show dynamic success or error banners
+    function showStatus(text, type) {
+        statusMsg.textContent = text;
+        statusMsg.className = `status-msg ${type}`;
+    }
+
+    // Initialize CAPTCHA when page loads
+    generateCaptcha();
+
+    // Refresh button event listener
+    refreshBtn.addEventListener("click", () => {
+        generateCaptcha();
+        captchaInput.value = "";
+        statusMsg.className = "status-msg"; // Hide status banner
+    });
+
+
+    // show and hide password
+    togglepwd.addEventListener("click", ()=>{
+        if (pwd.type === "password") {
+            pwd.type = "text";
+            togglepwd.textContent = "🙈";
+        }else{
+            pwd.type = "password";
+            togglepwd.textContent = "👁";
+        }
+
+    });
+    // Handle form submission and validation
+    registrationForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        
+        const userEnteredValue = captchaInput.value.trim();
+
+        // Check if the user input matches the generated string
+        if (userEnteredValue === generatedCaptcha) {
+            showStatus("Registration successful! Welcome aboard.", "success");
+            registrationForm.reset();
+            generateCaptcha(); // Generate a new one for future use
+        } else {
+            showStatus("Incorrect CAPTCHA. Please try again.", "error");
+            captchaInput.value = "";
+            generateCaptcha(); // Regenerate code on failure for security
+        }
+    });
+});
+
+    </script>
+</body>
+</html>

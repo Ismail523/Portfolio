@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color-Picker</title>
+    <style>
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.main{
+    display: flex;
+    justify-content: center;
+flex-direction: column;
+    width: 400px;
+    height: 150px;
+    background-color: aquamarine;
+    border-color: black;
+    border: 3px;
+    border-radius: 30px;
+    margin: 250px;
+    padding-left: 150px;
+    box-shadow: inset;
+}
+.main>label{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+}
+.main #colorPicker{
+    margin-left: 100px;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <label for="colorPicker">Choose a background color:</label>
+        <br>
+        <input type="color" id="colorPicker">
+    </div>
+    <script>
+        const picker = document.getElementById("colorPicker");
+
+        picker.addEventListener("input", () => {
+            document.body.style.backgroundColor = picker.value;
+        });
+    </script>
+</body>
+
+</html>

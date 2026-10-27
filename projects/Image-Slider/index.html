@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f1f5f9;
+            font-family: Arial, sans-serif;
+            background-color: rgb(16, 11, 11);
+        }
+
+        .slider {
+            width: min(90%, 800px);
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .slider img {
+            display: block;
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .slider button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 12px 16px;
+            border: none;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        #prev {
+            left: 15px;
+        }
+
+        #next {
+            right: 15px;
+        }
+
+        #counter {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+h1{
+    color: white;
+    padding-bottom: 5px;
+    margin-left: 300px;
+    margin-bottom: 50px;
+}
+        @media (max-width: 600px) {
+            .slider img {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider">
+        <h1>Image Slider</h1>
+        <img id="slide" src="https://picsum.photos/id/1018/900/450" alt="Nature landscape">
+
+        <button id="prev">❮</button>
+        <button id="next">❯</button>
+
+        <p id="counter">1 / 4</p>
+    </div>
+
+    <script>
+
+        const images = [
+            "https://picsum.photos/id/1018/900/450",
+            "https://picsum.photos/id/1015/900/450",
+            "https://picsum.photos/id/1019/900/450",
+            "https://picsum.photos/id/1020/900/450"
+        ];
+
+        let currentIndex = 0;
+
+        const slide = document.getElementById("slide");
+        const prevBtn = document.getElementById("prev");
+        const nextBtn = document.getElementById("next");
+        const counter = document.getElementById("counter");
+
+        function showImage() {
+            slide.src = images[currentIndex];
+            counter.textContent =
+                (currentIndex + 1) + " / " + images.length;
+        }
+
+        nextBtn.addEventListener("click", function () {
+            currentIndex++;
+
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+
+            showImage();
+        });
+
+        prevBtn.addEventListener("click", function () {
+            currentIndex--;
+
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            }
+
+            showImage();
+        });
+
+        showImage();
+
+    </script>
+</body>
+
+</html>

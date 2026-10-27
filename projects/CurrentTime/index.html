@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-Hour Digital Watch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #0f172a;
+            color: #ffffff;
+        }
+
+        .watch-container {
+            background: #1e293b;
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid #334155;
+            text-align: center;
+        }
+
+        .clock {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .time-display {
+            font-variant-numeric: tabular-nums;
+            color: #38bdf8;
+        }
+
+        .ampm-display {
+            font-size: 1.5rem;
+            margin-left: 15px;
+            color: #f43f5e;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .date-display {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #94a3b8;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="watch-container">
+        <h1>Digital Clock</h1>
+        <div class="clock">
+            <span id="time" class="time-display">00:00:00</span>
+            <span id="ampm" class="ampm-display">AM</span>
+        </div>
+        <div id="date" class="date-display">Loading Date...</div>
+    </div>
+
+    <script>
+        function updateWatch() {
+            const now = new Date();
+            
+            // Extract standard hours, minutes, and seconds
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            
+            // Determine AM or PM period
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            // Convert hours to 12-hour system format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // The hour '0' should be displayed as '12'
+            
+            // Pad single digit numbers with leading zeros
+            const formattedHours = String(hours).padStart(2, '0');
+            const formattedMinutes = String(minutes).padStart(2, '0');
+            const formattedSeconds = String(seconds).padStart(2, '0');
+            
+            // Assemble time string
+            const timeString = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+            
+            // Render updates directly to DOM elements
+            document.getElementById('time').textContent = timeString;
+            document.getElementById('ampm').textContent = ampm;
+            
+            // Render structural date string alongside watch readout
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('date').textContent = now.toLocaleDateString(undefined, options);
+        }
+
+        // Initialize execution loop instantly, then loop frame updates every second
+        updateWatch();
+        setInterval(updateWatch, 1000);
+    </script>
+</body>
+</html>
