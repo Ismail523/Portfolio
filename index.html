@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ismail Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaquaries.css">
+</head>
+
+<body>
+    <!-- desktop view -->
+    <nav id="desktop-nav" class="stickyNav">
+        <div class="logo">Portfolio</div>
+        <div class="">
+            <ul class="nav-links">
+                <li><a href="#profile">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- mobile to tab view -->
+    <nav id="hamburger-nav">
+        <div class="logo">Portfolio</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+    <!-- hero-section/section-1 -->
+    <section id="profile">
+        <div class="section__pic-container">
+            <img src="./dev.png.jpeg" alt="Ismail's profile pic" id="ismailPic">
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1">Hello, I'm</p>
+            <h1 class="title">Ismail khan</h1>
+            <p class="section__text__p2">Front-End Developer</p>
+
+            <div class="btn-container">
+                <button class="btn btn-color-2"><a href="./assets/Ismail's resume2.pdf">Resume</a></button>
+                <button class="btn btn-color-1"><a href="#contact">Contact Info</a></button>
+            </div>
+
+            <div id="socials-container">
+                <img src="./assets/linkedin.png" alt="my linkedin profile" class="icon"
+                    onclick="location.href='https://linkedin.com/in/mohd-ismail-khan-144296336'">
+                <img src="./assets/github.png" alt="my github profile" class="icon"
+                    onclick="location.href='https://github.com/Ismail523'">
+
+                <!-- <a href="http://github.com/Ismail523" target="_blank"> ISMAIL GITHUB</a> -->
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section id="about">
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About this Portfolio</h1>
+        <div class="section-container">
+            <div class="section__pic-container">
+                <img src="./assets/about.jpg" alt="Profice picture" class="about-pic">
+            </div>
+            <div class="about-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <img src="./assets/html.png" alt="HTML icon" class="icon" id="exp">
+                         <img src="./assets/css.png" alt="CSS icon" class="icon" id="edu">
+                        <h3>HTML CSS</h3>
+                        <p>HTML:5<br>Tailwind CSS</p>
+                    </div>
+                    <!-- <div class="details-container">
+                       
+                        
+                        <p><br>Bootstrap</p>
+                    </div> -->
+                    <div class="details-container">
+                        <img src="./assets/js.png" alt="JavaScript icon" class="icon" id="edu">
+                        <h3>JavaScript</h3>
+                        <p>Functions<br>Methods</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>This Portfolio Consists of projects build with the Tech HTML, CSS, Tailwind CSS and JavaScript. This Portfoilo Consists of projects related to DOM (Document Object Model) and few Web-API's of JavaScript including fetch, DOM, Timer App, Local digital clock, Color-picker, Validation Form, Traffic Signals logic....etc.
+
+                        The Aim of this Portfolio is to learn the real-world practical and logical working of the Front-End technologies while writing clean, readable and reusable code.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/arrow.jpg" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'">
+    </section>
+
+    <!-- Skills -->
+    <section id="experience">
+        <p class="section__text__p1">Explore My</p>
+        <h1 class="title">Skills</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Front-End Development</h2>
+                    <!-- front-end-article -->
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>HTML</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>CSS</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Tailwind CSS</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Bootstrap CSS</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>JavaScript</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>TypeScript</h3>
+                                <p>Beginner</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- backend-container -->
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Back-End Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>MySQL</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Node JS</h3>
+                                <p>Beginner</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Express JS</h3>
+                                <p>Beginner</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Git</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- projects section -->
+    <section id="projects">
+        <p class="section__text__p1">Browse My Projects</p>
+        <h1 class="title">Projects</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <!-- project1 -->
+                <div class="details-container color container">
+                    <div class="article-container">
+                        <img src="./assets/proj1.jpg" alt="Project 1" class="project-img">
+                    </div>
+                    <h2 class="experience-sub-title project-title">Print a Paragraph</h2>
+                    <span>Project One</span>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"><a href="./Add a Para/index.html">Live
+                                Demo</a></button>
+                    </div>
+                </div>
+                <!-- project2 -->
+                <div class="details-container color container">
+                    <div class="article-container">
+                        <img src="./assets/colorpicker.png" alt="Project 1" class="project-img">
+                    </div>
+                    <h2 class="experience-sub-title project-title">Color Picker</h2>
+                    <span>Project Two</span>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"><a href="./ColorPicker/index.html">Live
+                                Demo</a></button>
+                    </div>
+                </div>
+                <!-- project3 -->
+                <div class="details-container color container">
+                    <div class="article-container">
+                        <img src="./assets/digitalclock.jpg" alt="Project 1" class="project-img">
+                    </div>
+                    <h2 class="experience-sub-title project-title">Digital-Clock</h2>
+                    <span>Project Three</span>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"><a href="./CurrentTime/index.html"
+                                target="_blank">Live
+                                Demo</a></button>
+                    </div>
+                </div>
+                <!-- project4 -->
+                <div class="details-container color container">
+                    <div class="article-container">
+                        <img src="./assets/calci.png" alt="Project 4" class="project-img">
+                    </div>
+                    <h2 class="experience-sub-title project-title">Calculator</h2>
+                    <span>Project Four</span>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"><a href="./Calculator/index.html">Live
+                                Demo</a></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-containers">
+                <!-- project5 -->
+                <div class="details-container color container">
+                    <div class="article-container">
+                        <img src="./assets/imgSlider.png" alt="Project 5" class="project-img">
+                    </div>
+                    <h2 class="experience-sub-title project-title">Image Slider</h2>
+                    <span>Project Five</span>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"><a href="./Image-Slider/index.html">Live Demo</a></button>
+                    </div>
+                </div>
+                <!-- project6 -->
+                <div class="details-container color container">
+                    <div class="article-container">
+                        <img src="./assets/fetch1.png" alt="Project 6" class="project-img">
+                    </div>
+                    <h2 class="experience-sub-title project-title">Fetch API</h2>
+                    <span>Project Six</span>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"><a href="./Fetch/index.html"
+                                target="_blank">Live Demo</a></button>
+                    </div>
+                </div>
+                 <!-- project7 -->
+                <div class="details-container color container">
+                    <div class="article-container">
+                        <img src="./assets/timer.png" alt="Project 7" class="project-img">
+                    </div>
+                    <h2 class="experience-sub-title project-title">Timer App</h2>
+                    <span>Project Seven</span>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"><a href="./Timer/index.html">Live Demo</a></button>
+                    </div>
+                </div>
+                <!-- project8 -->
+                <div class="details-container color container">
+                    <div class="article-container">
+                        <img src="./assets/traffic.png" alt="Project 8" class="project-img">
+                    </div>
+                    <h2 class="experience-sub-title project-title">Traffic Signal</h2>
+                    <span>Project Eight</span>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"><a href="./Signals/index.html">Live Demo</a></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-containers">
+                <!-- project9 -->
+                <div class="details-container color container">
+                    <div class="article-container">
+                        <img src="./assets/todo.png" alt="Project 9" class="project-img">
+                    </div>
+                    <h2 class="experience-sub-title project-title">To-Do List</h2>
+                    <span>Project Nine</span>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"><a href="./To-Do list/index.html"
+                                target="_blank">Live Demo</a></button>
+                    </div>
+                </div>
+                     <!-- project10 -->
+                <div class="details-container color container">
+                    <div class="article-container">
+                        <img src="./assets/form.png" alt="Project 10" class="project-img">
+                    </div>
+                    <h2 class="experience-sub-title project-title">Registeration Form</h2>
+                    <span>Project Ten</span>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"><a href="./Registration From/index.html">Live Demo</a></button>
+                    </div>
+                </div>
+                <!-- project11 -->
+                <div class="details-container color container">
+                    <div class="article-container">
+                        <img src="./assets/realEstate1.jpg" alt="Project 11" class="project-img">
+                    </div>
+                    <h2 class="experience-sub-title project-title">Static Real-Estate</h2>
+                    <span>Project Eleven</span>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"><a href="/Real/index.html">Live Demo</a></button>
+                    </div>
+                </div>
+                 <!-- project12 -->
+                <div class="details-container color container">
+                    <div class="article-container">
+                        <img src="./assets/todo.png" alt="Project 9" class="project-img">
+                    </div>
+                    <h2 class="experience-sub-title project-title">Weather-App</h2>
+                    <span>Project Tewlve</span>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"><a href="./weather/index.html"
+                                target="_blank">Live Demo</a></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="about-containers">
+           
+            </div> -->
+
+
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact">
+        <p class="section__text__p1">Get In Touch</p>
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon">
+                <p><a href="mailto:mohdismailkhan20041@gmail.com">Send Email</a></p>
+            </div>
+            <div class="contact-info-container">
+                <img src="./assets/linkedin.png" alt="linkedin icon" class="icon contact-icon">
+                <p><a href="https://linkedin.com/in/mohd-ismail-khan-144296336">LinkedIn</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section -->
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#profile">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <p>Copyright Copy &#169 2026 Mohd Ismail Khan. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
