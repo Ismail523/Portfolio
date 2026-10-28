@@ -93,3 +93,18 @@ body{
     display: none;
     color: red;
 }
+
+@media (max-width:768px) {
+    .card{
+        width: 100%;
+    }
+    .search {
+        width: 100%;
+    }
+    .search button{
+        width: 30px;
+    }
+    .search button img{
+        width: 22px;
+    }
+}
